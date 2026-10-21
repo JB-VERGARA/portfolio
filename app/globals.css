@@ -1,26 +1,319 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f1ea;
+  --foreground: #111111;
+  --muted: rgba(17, 17, 17, 0.5);
+  --border: rgba(17, 17, 17, 0.2);
+  --project-overlay: rgba(0, 0, 0, 0.5);
+
+  --motion-duration: 700ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* =========================
+   DARK MODE
+   ========================= */
+
+html[data-mode="dark"] {
+  --background: #111111;
+  --foreground: #f4f1ea;
+  --muted: rgba(244, 241, 234, 0.5);
+  --border: rgba(244, 241, 234, 0.2);
+  --project-overlay: rgba(244, 241, 234, 0.18);
+
+  --motion-duration: 500ms;
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================
+   ARTISTIC MODE
+   ========================= */
+
+html[data-mode="artistic"] {
+  --background: #f4efe6;
+  --foreground: #17131f;
+  --muted: rgba(23, 19, 31, 0.55);
+  --border: rgba(23, 19, 31, 0.18);
+
+  --project-overlay: rgba(23, 19, 31, 0.62);
+
+  --accent: #7657ff;
+  --accent-secondary: #ff6b4a;
+  --accent-tertiary: #18b99a;
+
+  --artistic-purple: rgba(118, 87, 255, 0.22);
+  --artistic-orange: rgba(255, 107, 74, 0.18);
+  --artistic-green: rgba(24, 185, 154, 0.16);
+
+  --motion-duration: 800ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =========================
+   BASE
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 500ms ease,
+    color 500ms ease;
+}
+
+/* =========================
+   ARTISTIC BACKGROUND
+   ========================= */
+
+html[data-mode="artistic"] body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+html[data-mode="artistic"] body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 55vw;
+  height: 55vw;
+  border-radius: 50%;
+  background: var(--artistic-purple);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+  animation: artistic-float-one 14s ease-in-out infinite alternate;
+}
+
+html[data-mode="artistic"] body::after {
+  content: "";
+  position: fixed;
+  right: -15%;
+  bottom: -20%;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background: var(--artistic-orange);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: -1;
+  animation: artistic-float-two 18s ease-in-out infinite alternate;
+}
+
+/* =========================
+   ARTISTIC MOTION
+   ========================= */
+
+@keyframes artistic-float-one {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(8vw, 5vh, 0) scale(1.12);
+  }
+}
+
+@keyframes artistic-float-two {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-6vw, -4vh, 0) scale(1.08);
+  }
+}
+
+/* =========================
+   MODE-AWARE REVEALS
+   ========================= */
+
+html[data-mode="original"] .transition-all {
+  transition-timing-function: var(--motion-ease);
+}
+
+html[data-mode="dark"] .transition-all {
+  transition-timing-function: var(--motion-ease);
+}
+
+html[data-mode="artistic"] .transition-all {
+  transition-timing-function: var(--motion-ease);
+}
+
+/* =========================
+   DARK MODE MOTION
+   ========================= */
+
+html[data-mode="dark"] .group:hover {
+  transform: translateY(-2px);
+}
+
+html[data-mode="dark"] .group:hover img {
+  transform: scale(1.045);
+}
+
+/* =========================
+   ARTISTIC MODE MOTION
+   ========================= */
+
+html[data-mode="artistic"] .group:hover {
+  transform: translateY(-3px);
+}
+
+html[data-mode="artistic"] .group:hover img {
+  transform: scale(1.07);
+}
+
+/* =========================
+   ARTISTIC SELECTION
+   ========================= */
+
+html[data-mode="artistic"] ::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html[data-mode="artistic"] body::before,
+  html[data-mode="artistic"] body::after {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* =========================
+   CUSTOM CURSOR
+   ========================= */
+
+@media (min-width: 768px) {
+  html,
+  body,
+  a,
+  button {
+    cursor: none;
+  }
+}
+
+/* =========================
+   ARTISTIC PROJECT STYLING
+   ========================= */
+
+html[data-mode="artistic"] h1 span:last-child {
+  color: var(--accent);
+}
+
+html[data-mode="artistic"] .group:hover h3 {
+  color: var(--accent);
+}
+
+html[data-mode="artistic"] .group:hover span {
+  transition: all 500ms ease;
+}
+
+html[data-mode="artistic"] .group:hover .project-hover-overlay {
+  background: rgba(51, 39, 92, 0.7);
+}
+
+html[data-mode="artistic"] .group:hover .project-hover-title {
+  color: white;
+}
+
+html[data-mode="artistic"] .group:hover .artistic-view {
+  background: #e8794f;
+  color: white;
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(232, 121, 79, 0.25);
+}
+
+/* =========================
+   MODE INTRO
+   ========================= */
+
+.mode-intro {
+  animation: mode-intro-in 400ms ease-out;
+}
+
+@keyframes mode-intro-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mode-intro {
+    animation: none;
+  }
+}
+
+/* =========================
+   KEYBOARD FOCUS
+   ========================= */
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 5px;
+}
+
+html[data-mode="artistic"] :focus-visible {
+  outline-color: var(--accent);
+}
+
+/* Keep focus visible on buttons and links even with custom cursor */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 5px;
+}
+
+html[data-mode="artistic"] a:focus-visible,
+html[data-mode="artistic"] button:focus-visible {
+  outline-color: var(--accent);
+}
+
+@keyframes visualWorkIn {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
