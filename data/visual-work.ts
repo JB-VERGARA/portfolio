@@ -16,7 +16,7 @@ export const visualWork: VisualWork[] = [
       "A mock dashboard concept for AratReview, a classroom review application designed around the needs of remote and pandemic-era learning.",
     category: "Figma (App Design)",
     year: "2024",
-    image: "/visual-work/designv1.webp",
+    image: "/visual-work/designV1.webp",
   },
   {
     slug: "arat-review-navigation",
@@ -25,7 +25,7 @@ export const visualWork: VisualWork[] = [
       "A navigation concept for the AratReview classroom application, exploring a simple structure for accessing learning and review features.",
     category: "Figma (App Design)",
     year: "2024",
-    image: "/visual-work/designv2.webp",
+    image: "/visual-work/designV2.webp",
   },
   {
     slug: "capstone-login-page",
