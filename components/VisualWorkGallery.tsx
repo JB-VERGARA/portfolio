@@ -26,8 +26,24 @@ export default function VisualWorkGallery({
 
   const [mounted, setMounted] = useState(false);
 
+  const [isDesktop, setIsDesktop] = useState(false);
+
   useEffect(() => {
     setMounted(true);
+
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+
+    const handleMediaChange = () => {
+      setIsDesktop(mediaQuery.matches);
+    };
+
+    handleMediaChange();
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaChange);
+    };
   }, []);
 
   /*
@@ -65,7 +81,12 @@ export default function VisualWorkGallery({
   }, []);
 
   const openViewer = (index: number) => {
-    setViewerItems(displayedWork);
+    const viewerWork =
+      showViewAll && !isDesktop
+        ? displayedWork.slice(0, 3)
+        : displayedWork;
+
+    setViewerItems(viewerWork);
     setSelectedIndex(index);
     setOpenedFromSearch(false);
   };
@@ -127,7 +148,7 @@ export default function VisualWorkGallery({
                 }
               }}
               disabled={!item.image}
-              className="
+              className={`
                 group
                 block
                 w-full
@@ -137,7 +158,8 @@ export default function VisualWorkGallery({
                 focus-visible:ring-[var(--foreground)]
                 focus-visible:ring-offset-4
                 disabled:cursor-default
-              "
+                ${index >= 3 ? "hidden lg:block" : ""}
+              `}
               aria-label={
                 item.image
                   ? `View ${item.title}`

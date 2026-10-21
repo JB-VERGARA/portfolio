@@ -86,6 +86,40 @@ export default function ProjectGrid() {
     });
   };
 
+  const handleShowAll = () => {
+    if (showAll) {
+      setShowAll(false);
+
+      window.requestAnimationFrame(() => {
+        const lastVisibleProject =
+          filteredProjects[INITIAL_PROJECT_COUNT - 1];
+
+        if (!lastVisibleProject) return;
+
+        const element = document.getElementById(
+          `project-${lastVisibleProject.slug}`,
+        );
+
+        if (element) {
+          const offset = 120;
+          const top =
+            element.getBoundingClientRect().top +
+            window.scrollY -
+            offset;
+
+          window.scrollTo({
+            top,
+            behavior: "smooth",
+          });
+        }
+      });
+
+      return;
+    }
+
+    setShowAll(true);
+  };
+
   return (
     <div>
       {/* Filters + Search */}
@@ -201,6 +235,7 @@ export default function ProjectGrid() {
           displayedProjects.map((project, index) => (
             <Link
               key={project.slug}
+              id={`project-${project.slug}`}
               href={`/work/${project.slug}`}
               className="group block"
             >
@@ -393,7 +428,7 @@ export default function ProjectGrid() {
       {shouldShowButton && (
         <div className="mt-24 flex justify-center">
           <button
-            onClick={() => setShowAll((current) => !current)}
+            onClick={handleShowAll}
             className="group flex items-center gap-4 text-sm uppercase tracking-[0.2em]"
           >
             <span>

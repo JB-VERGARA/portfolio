@@ -85,7 +85,8 @@ export default function VisualWorkViewer({
   }
 
   const showGalleryLink =
-    items.length === 6 && selectedIndex === items.length - 1;
+    (items.length === 3 && selectedIndex === 2) ||
+    (items.length === 6 && selectedIndex === 5);
 
   return (
     <div
