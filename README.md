@@ -1,4 +1,4 @@
-# Bryan Vergara — Portfolio
+# John Bryan Vergara — Portfolio
 
 Personal portfolio website of **John Bryan Vergara**, showcasing my projects, technical work, visual work, and professional background.
 
