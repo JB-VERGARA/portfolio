@@ -48,7 +48,7 @@ export default function Home() {
     </Reveal>
 
     <Reveal delay={200}>
-      <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr]">
+      <div className="mt-15 grid gap-8 lg:grid-cols-[1fr_1fr]">
         <p className="max-w-xl text-sm leading-relaxed opacity-60 md:text-base">
           IT professional exploring software development, design, and
           automation through practical projects and creative experiments.
