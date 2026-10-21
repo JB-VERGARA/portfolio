@@ -114,8 +114,8 @@ export default function ModeSwitcher() {
                   bg-[var(--background)]
                   p-4
                   shadow-xl
-                  md:top-5
-                  md:right-34
+                  md:top-12
+                  md:right-0
                 "
                 role="status"
                 aria-live="polite"
