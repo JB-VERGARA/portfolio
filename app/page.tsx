@@ -18,7 +18,8 @@ import ProjectGrid from "@/components/ProjectGrid";
 import Reveal from "@/components/Reveal";
 import VisualWorkGallery from "@/components/VisualWorkGallery";
 import { experience } from "@/data/experience";
-import { credentials } from "@/data/credentials";
+import CredentialsList from "@/components/CredentialsList";
+
 
 export default function Home() {
   return (
@@ -360,112 +361,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Credentials */}
-      <section id="credentials" className="px-6 py-24 md:px-10 md:py-32 lg:py-40">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <div className="mb-16 flex items-end justify-between border-b border-[var(--border)] pb-6">
-              <p className="text-xs uppercase tracking-[0.3em] opacity-50">
-                05 — Credentials
-              </p>
+{/* Credentials */}
+<section
+  id="credentials"
+  className="px-6 py-24 md:px-10 md:py-32 lg:py-40"
+>
+  <div className="mx-auto max-w-7xl">
+    <Reveal>
+      <div className="mb-16 flex items-end justify-between border-b border-[var(--border)] pb-6">
+        <p className="text-xs uppercase tracking-[0.3em] opacity-50">
+          05 — Credentials
+        </p>
 
-              <span className="hidden text-xs uppercase tracking-[0.2em] opacity-30 md:block">
-                Learning &amp; training
-              </span>
-            </div>
-          </Reveal>
+        <span className="hidden text-xs uppercase tracking-[0.2em] opacity-30 md:block">
+          Learning &amp; training
+        </span>
+      </div>
+    </Reveal>
 
-          <Reveal delay={100}>
-            <div className="grid gap-16 lg:grid-cols-[1fr_2fr]">
-              <div>
-                <h2 className="text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">
-                  Things I&apos;ve
-                  <br />
-                  <span className="opacity-30">learned.</span>
-                </h2>
+    <Reveal delay={100}>
+      <div className="grid gap-16 lg:grid-cols-[1fr_2fr]">
+        <div>
+          <h2 className="text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">
+            Things I&apos;ve
+            <br />
+            <span className="opacity-30">learned.</span>
+          </h2>
 
-                <p className="mt-8 max-w-sm text-sm leading-relaxed opacity-50 md:text-base">
-                  Certifications, training, and learning experiences that have
-                  contributed to how I approach technology and problem solving.
-                </p>
-              </div>
-
-              <div>
-                {credentials.length > 0 ? (
-                  <div className="space-y-4">
-                    {credentials.map((item, index) => (
-                      <article
-                        key={item.slug}
-                        className="
-                          border border-[var(--border)] p-6
-                          md:p-8
-                        "
-                      >
-                        <div className="flex items-start justify-between gap-6">
-                          <span className="text-xs uppercase tracking-[0.15em] opacity-30">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-
-                          <span className="text-xs uppercase tracking-[0.15em] opacity-40">
-                            {item.year}
-                          </span>
-                        </div>
-
-                        <div className="mt-10 grid gap-6 md:grid-cols-[1.4fr_1fr]">
-                          <div>
-                            <h3 className="text-xl font-medium md:text-2xl">
-                              {item.title}
-                            </h3>
-
-                            <p className="mt-2 text-sm opacity-40">
-                              {item.issuer}
-                            </p>
-                          </div>
-
-                          <div>
-                            <span className="text-[10px] uppercase tracking-[0.2em] opacity-40">
-                              {item.type}
-                            </span>
-
-                            {item.description && (
-                              <p className="mt-4 text-sm leading-relaxed opacity-50">
-                                {item.description}
-                              </p>
-                            )}
-
-                            {item.link && (
-                              <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="
-                                  mt-6 inline-flex items-center gap-2
-                                  text-xs uppercase tracking-[0.15em]
-                                  opacity-50 transition-opacity
-                                  hover:opacity-100
-                                "
-                              >
-                                View Credential
-                                <span>↗</span>
-                              </a>
-                            )}
-                          </div>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="border border-[var(--border)] p-10">
-                    <p className="text-sm uppercase tracking-[0.2em] opacity-40">
-                      Credentials coming soon.
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </Reveal>
+          <p className="mt-8 max-w-sm text-sm leading-relaxed opacity-50 md:text-base">
+            Certifications, training, and learning experiences that have
+            contributed to how I approach technology and problem solving.
+          </p>
         </div>
-      </section>
+
+        <div>
+          <CredentialsList />
+        </div>
+      </div>
+    </Reveal>
+  </div>
+</section>
 
 {/* Contact */}
 <section

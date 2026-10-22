@@ -23,6 +23,7 @@ export const credentials: Credential[] = [
     description:
       "Professional Level Career Service Examination conducted by the Civil Service Commission for eligibility for appointment to positions in the Philippine government service. Passed the examination through the Pen and Paper Test.",
   },
+
   {
     slug: "bs-information-technology",
     title: "Bachelor of Science in Information Technology",
@@ -34,6 +35,27 @@ export const credentials: Credential[] = [
   },
 
   {
+    slug: "duda-platform-certified-specialist",
+    title: "Duda Platform Certified Specialist",
+    issuer: "Duda",
+    year: "2025",
+    type: "Certification",
+    description:
+      "Certification demonstrating proficiency with the Duda website builder and platform for professional website development and management.",
+
+  },
+
+  {
+    slug: "skill-of-the-year-2025-generative-ai",
+    title: "Skill of the Year 2025 on Generative AI",
+    issuer: "Technical University of Munich",
+    year: "2025",
+    type: "Certification",
+    description:
+      "Credential recognizing training in Generative AI for Web Developers, with a focus on applying generative AI concepts and tools to web development.",
+  },
+
+  {
     slug: "tvl-information-and-communication-technology",
     title: "TVL – Information and Communication Technology",
     issuer: "International Electronics and Technical Institute, Inc.",
@@ -42,5 +64,4 @@ export const credentials: Credential[] = [
     description:
       "Technical-vocational education focused on Information and Communication Technology, providing foundational training in computer systems, digital technologies, and practical technical skills.",
   },
-
 ];
