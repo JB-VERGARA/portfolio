@@ -93,52 +93,6 @@ public/
 └── assets/
 ```
 
-## Development
-
-Clone the repository:
-
-```bash
-git clone https://github.com/JB-VERGARA/portfolio.git
-cd portfolio
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-Then open:
-
-```text
-http://localhost:3000
-```
-
-## Build
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-Run the production build locally:
-
-```bash
-npm start
-```
-
-## Deployment
-
-The portfolio is deployed using **Vercel**.
-
-Changes pushed to the production branch can be deployed through the connected Vercel project.
 
 ## Why This Repository Is Public
 
