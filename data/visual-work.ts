@@ -10,6 +10,55 @@ export type VisualWork = {
 
 export const visualWork: VisualWork[] = [
   {
+    slug: "ats-mobile-upload",
+    title: "ATS Resume Checker App — Resume Upload",
+    description:
+      "The starting point of the ATS mobile experience, allowing users to upload their resume for automated analysis and evaluation.",
+    category: "Figma (Mobile App Design)",
+    year: "2026",
+    image: "/visual-work/ats-mobile-upload.png",
+  },
+
+  {
+    slug: "ats-mobile-processing-resume",
+    title: "ATS Resume Checker App — Resume Processing",
+    description:
+      "A processing state that keeps users informed while the ATS analyzes their uploaded resume and evaluates its compatibility with job requirements.",
+    category: "Figma (Mobile App Design)",
+    year: "2026",
+    image: "/visual-work/ats-mobile-processing-resume.png",
+  },
+
+  {
+    slug: "ats-mobile-result",
+    title: "ATS Resume Checker App — Analysis Results",
+    description:
+      "A results screen that presents the resume's ATS score and key findings, giving users an immediate overview of their resume performance.",
+    category: "Figma (Mobile App Design)",
+    year: "2026",
+    image: "/visual-work/ats-mobile-result.png",
+  },
+
+  {
+    slug: "ats-mobile-resume-review",
+    title: "ATS Resume Checker App — Resume Review",
+    description:
+      "A detailed review experience where users can explore ATS feedback, identify areas for improvement, and understand how their resume can be strengthened.",
+    category: "Figma (Mobile App Design)",
+    year: "2026",
+    image: "/visual-work/ats-mobile-resume-review.png",
+  },
+
+  {
+    slug: "ats-mobile-error",
+    title: "ATS Resume Checker App — Upload Error",
+    description:
+      "An error state designed to clearly explain when resume processing fails and guide users toward recovering from the issue.",
+    category: "Figma (Mobile App Design)",
+    year: "2026",
+    image: "/visual-work/ats-mobile-error.png",
+  },
+  {
     slug: "arat-review-dashboard",
     title: "AratReview Dashboard",
     description:

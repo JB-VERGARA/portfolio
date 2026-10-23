@@ -2,7 +2,9 @@ export type ProjectCategory =
   | "IT"
   | "Development"
   | "Design"
-  | "Automation";
+  | "Automation"
+  | "AI"
+  ;
 
 export type Project = {
   slug: string;
@@ -60,6 +62,34 @@ export const projects: Project[] = [
 
     gallery: [],
   },
+
+  {
+  slug: "ats-resume-checker",
+  title: "ATS Resume Checker",
+  description:
+    "An AI-assisted resume analysis tool that evaluates resumes against job descriptions, identifies missing keywords, and provides actionable suggestions for improving ATS compatibility.",
+  year: "2026",
+  categories: ["Development", "AI", "Design"],
+  technologies: ["Next.js", "TypeScript", "Tailwind CSS", "AI"],
+  featured: true,
+  image: "/projects/ats-resume-checker.png",
+
+  role: "Developer & Designer",
+
+  overview:
+    "An AI-assisted resume checker built to help job seekers understand how well their resume matches a target job description and identify areas that could be improved.",
+
+  process:
+    "Designed the user flow and interface, then implemented resume and job description analysis, keyword matching, compatibility scoring, and actionable feedback using AI-assisted processing.",
+
+  challenges:
+    "Turning unstructured resume and job description content into useful, understandable feedback while keeping the experience simple enough for users to quickly identify what needs improvement.",
+
+  outcome:
+    "A practical AI-assisted tool that provides resume analysis, matching insights, missing keywords, and improvement suggestions in a simple, user-friendly interface.",
+
+  gallery: [],
+},
 
   {
     slug: "three-j-print-center",
