@@ -8,10 +8,12 @@ import { projects, ProjectCategory } from "@/data/projects";
 
 const filters: ("All" | ProjectCategory)[] = [
   "All",
-  "IT",
-  "Development",
-  "Design",
+  "AI",
   "Automation",
+  "Design",
+  "Development",
+  "Duda Website Builder",
+  "IT",
 ];
 
 const INITIAL_PROJECT_COUNT = 2;

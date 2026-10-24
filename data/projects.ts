@@ -4,6 +4,7 @@ export type ProjectCategory =
   | "Design"
   | "Automation"
   | "AI"
+  | "Duda Website Builder"
   ;
 
 export type Project = {
@@ -206,6 +207,125 @@ export const projects: Project[] = [
     outcome:
       "A responsive study application with multiple review modes and automatic results.",
 
+    gallery: [],
+  },
+   {
+    slug: "localsearch-duda-1",
+    title: "Duda Site 1",
+    description:
+      "Built the initial V1 website using Duda site builder during my employment at eClerx for its client, LocalSearch, following the supplied requirements. This entry represents my original contribution. LocalSearch, the client, or other contributors may have since changed the website, so the live version may differ from my initial build.",
+    year: "",
+    categories: ["Duda Website Builder"],
+    technologies: ["Duda Website Builder"],
+    featured: true,
+    image: "/projects/accurate.png",
+    live: "https://www.accuratetilingmnc.au/",
+    role: "Analyst Web Designer — eClerx / LocalSearch",
+    gallery: [],
+  },
+
+  {
+    slug: "localsearch-duda-2",
+    title: "Duda Site 2",
+    description:
+      "Built the initial V1 website using Duda site builder during my employment at eClerx for its client, LocalSearch, following the supplied requirements. This entry represents my original contribution. LocalSearch, the client, or other contributors may have since changed the website, so the live version may differ from my initial build.",
+    year: "",
+    categories: ["Duda Website Builder"],
+    technologies: ["Duda Website Builder"],
+    featured: true,
+    image: "/projects/bruce.png",
+    live: "https://www.brucesmithcabinets.com.au/",
+    role: "Analyst Web Designer — eClerx / LocalSearch",
+    gallery: [],
+  },
+
+  {
+    slug: "localsearch-duda-3",
+    title: "Duda Site 3",
+    description:
+      "Built the initial V1 website using Duda site builder during my employment at eClerx for its client, LocalSearch, following the supplied requirements. This entry represents my original contribution. LocalSearch, the client, or other contributors may have since changed the website, so the live version may differ from my initial build.",
+    year: "",
+    categories: ["Duda Website Builder"],
+    technologies: ["Duda Website Builder"],
+    featured: true,
+    image: "/projects/dempster.png",
+    live: "https://www.dempsters.com.au/",
+    role: "Analyst Web Designer — eClerx / LocalSearch",
+    gallery: [],
+  },
+
+  {
+    slug: "localsearch-duda-4",
+    title: "Duda Site 4",
+    description:
+      "Built the initial V1 website using Duda site builder during my employment at eClerx for its client, LocalSearch, following the supplied requirements. This entry represents my original contribution. LocalSearch, the client, or other contributors may have since changed the website, so the live version may differ from my initial build.",
+    year: "",
+    categories: ["Duda Website Builder"],
+    technologies: ["Duda Website Builder"],
+    featured: true,
+    image: "/projects/evolution.png",
+    live: "https://www.evolutionbuildinggroup.com.au/",
+    role: "Analyst Web Designer — eClerx / LocalSearch",
+    gallery: [],
+  },
+
+  {
+    slug: "localsearch-duda-5",
+    title: "Duda Site 5",
+    description:
+      "Built the initial V1 website using Duda site builder during my employment at eClerx for its client, LocalSearch, following the supplied requirements. This entry represents my original contribution. LocalSearch, the client, or other contributors may have since changed the website, so the live version may differ from my initial build.",
+    year: "",
+    categories: ["Duda Website Builder"],
+    technologies: ["Duda Website Builder"],
+    featured: true,
+    image: "/projects/highgrade.png",
+    live: "https://www.hgtm.com.au/",
+    role: "Analyst Web Designer — eClerx / LocalSearch",
+    gallery: [],
+  },
+
+  {
+    slug: "localsearch-duda-6",
+    title: "Duda Site 6",
+    description:
+      "Built the initial V1 website using Duda site builder during my employment at eClerx for its client, LocalSearch, following the supplied requirements. This entry represents my original contribution. LocalSearch, the client, or other contributors may have since changed the website, so the live version may differ from my initial build.",
+    year: "",
+    categories: ["Duda Website Builder"],
+    technologies: ["Duda Website Builder"],
+    featured: true,
+    image: "/projects/printspot.png",
+    live: "https://www.printspotgroup.com.au/",
+    role: "Analyst Web Designer — eClerx / LocalSearch",
+    gallery: [],
+  },
+
+  {
+    slug: "localsearch-duda-7",
+    title: "Duda Site 7",
+    description:
+      "Built the initial V1 website using Duda site builder during my employment at eClerx for its client, LocalSearch, following the supplied requirements. This entry represents my original contribution. LocalSearch, the client, or other contributors may have since changed the website, so the live version may differ from my initial build.",
+    year: "",
+    categories: ["Duda Website Builder"],
+    technologies: ["Duda Website Builder"],
+    featured: true,
+    image: "/projects/simpson.png",
+    live: "https://www.simpsonsplumbing.com.au/",
+    role: "Analyst Web Designer — eClerx / LocalSearch",
+    gallery: [],
+  },
+
+  {
+    slug: "localsearch-duda-8",
+    title: "Duda Site 8",
+    description:
+      "Built the initial V1 website using Duda site builder during my employment at eClerx for its client, LocalSearch, following the supplied requirements. This entry represents my original contribution. LocalSearch, the client, or other contributors may have since changed the website, so the live version may differ from my initial build.",
+    year: "",
+    categories: ["Duda Website Builder"],
+    technologies: ["Duda Website Builder"],
+    featured: true,
+    image: "/projects/Tigas.png",
+    live: "https://www.tigasconcreting.com.au/",
+    role: "Analyst Web Designer — eClerx / LocalSearch",
     gallery: [],
   },
 
