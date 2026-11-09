@@ -37,7 +37,7 @@ export default function Home() {
   <div className="mx-auto w-full max-w-7xl">
     <Reveal>
       <p className="mb-8 text-xs uppercase tracking-[0.3em] opacity-50">
-        IT · Development · Design · Automation
+        Analytics · Automation · Design · Development ·  IT 
       </p>
     </Reveal>
 
@@ -51,8 +51,7 @@ export default function Home() {
     <Reveal delay={200}>
       <div className="mt-15 grid gap-8 lg:grid-cols-[1fr_1fr]">
         <p className="max-w-xl text-sm leading-relaxed opacity-60 md:text-base">
-          IT professional exploring software development, design, and
-          automation through practical projects and creative experiments.
+          IT professional exploring data analytics, software development, design, and automation through practical projects and continuous learning.
         </p>
 
         <div className="flex items-end justify-center md:justify-start lg:justify-end">
@@ -118,16 +117,17 @@ export default function Home() {
 
               <div className="flex flex-col justify-end lg:pb-3">
                 <p className="text-xl leading-relaxed md:text-2xl">
-                  I&apos;m Bryan, an IT professional who likes building
-                  things, solving problems, and figuring out what happens
-                  behind the screen.
+                  I&apos;m Bryan, an IT graduate who enjoys
+                  building things, solving problems, exploring data, 
+                  and figuring out what happens behind the screen.
                 </p>
 
                 <p className="mt-8 max-w-lg text-sm leading-relaxed opacity-50 md:text-base">
-                  My work sits somewhere between technology and creativity.
-                  I&apos;ve explored web development, technical support,
-                  software, automation, and design — usually learning by
-                  actually making something.
+                  My work sits somewhere between technology and creativity .
+                  I&apos;ve explored web development, software programming, automation, 
+                  and design — usually learning by actually making something.
+                  Currently developing practical skills in data analysis, visualization,
+                  and turning information into meaningful insights.
                 </p>
               </div>
             </div>
@@ -184,26 +184,30 @@ export default function Home() {
               </div>
             </div>
           </Reveal>
+    
+<Reveal delay={200}>
+  <div className="mt-24 border-t border-[var(--border)] pt-8">
+    {/* Current Interests */}
+    <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
+      <div>
+        <p className="text-xs uppercase tracking-[0.2em] opacity-30">
+          Currently interested in
+        </p>
+      </div>
 
-          <Reveal delay={200}>
-            <div className="mt-24 grid gap-12 border-t border-[var(--border)] pt-8 md:grid-cols-[1fr_2fr]">
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] opacity-30">
-                  Currently interested in
-                </p>
-              </div>
+      <div className="flex flex-wrap gap-x-8 gap-y-4 text-2xl tracking-tight md:text-4xl">
+        <span>Data Analytics</span>
+        <span className="opacity-30">/</span>
+        <span>Database Management</span>
+        <span className="opacity-30">/</span>
+        <span>Python Programming</span>
+        <span className="opacity-30">/</span>
+        <span>AI Automation</span>
+      </div>
+    </div>
+  </div>
+</Reveal>
 
-              <div className="flex flex-wrap gap-x-8 gap-y-4 text-2xl tracking-tight md:text-4xl">
-                <span>Software</span>
-                <span className="opacity-30">/</span>
-                <span>Automation</span>
-                <span className="opacity-30">/</span>
-                <span>Interfaces</span>
-                <span className="opacity-30">/</span>
-                <span>IT</span>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </section>
 
@@ -392,11 +396,45 @@ export default function Home() {
             Certifications, training, and learning experiences that have
             contributed to how I approach technology and problem solving.
           </p>
-        </div>
+ {/* Learning Roadmap */}
+  <div className="mt-12 border-t border-[var(--border)] pt-6">
+    <div className="mb-5 flex items-center justify-between">
+      <p className="text-[10px] uppercase tracking-[0.2em] opacity-40">
+        Currently Learning
+      </p>
 
+      <a
+        href="https://roadmap.sh"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[10px] uppercase tracking-[0.15em] opacity-40 transition-opacity hover:opacity-100"
+      >
+        roadmap.sh ↗
+      </a>
+    </div>
+
+    <a
+      href="https://roadmap.sh"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block transition-opacity hover:opacity-80"
+    >
+      <img
+        src="https://roadmap.sh/card/wide/67997628d6a983c895541151?variant=light&roadmaps=data-analyst%2Csql%2Cpython-data-analysis%2Cpower-bi"
+        alt="My roadmap.sh learning progress"
+        className="h-auto w-full"
+        loading="lazy"
+      />
+    </a>
+  </div>
+        </div>
+        
+                
         <div>
           <CredentialsList />
         </div>
+        
+        
       </div>
     </Reveal>
   </div>
